@@ -33,12 +33,12 @@
     </style>
     <!-- Custom styles for this template -->
   </head> 
-  <!--
+  
   <body class="bg-light">
     <div class="container">
   <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-	-->
+    <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='logo.png')}}" alt="" width="144" height="72">
+	
     <h2>Take the test !</h2>
     <p class="lead">How likely was it that you ever got COVID-19? Fill in the form To find out!</p>
   </div>
@@ -54,7 +54,7 @@
             <label class="custom-control-label" for="faiblesse1oui">Yes</label>
           </div>
           <div class="custom-control custom-radio" onclick=disableSliderQuestion()>
-            <input id="faiblesse1non" name="generally_ill" value='no' type="radio" class="custom-control-input" checked="" required="">
+            <input id="faiblesse1non" name="generally_ill" value='no' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="faiblesse1non">No</label>
           </div>
         </div>
@@ -88,7 +88,7 @@
             <label class="custom-control-label" for="sudden1">Yes</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="sudden2" name="taste_loss" value='no' type="radio" class="custom-control-input" checked="" required="">
+            <input id="sudden2" name="taste_loss" value='no' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="sudden2">No</label>
           </div>
         </div>
@@ -116,7 +116,7 @@
         <h4 class="mb-3">Have you developed the symptom(s) after the 8th of March</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="date_oui" name="date_symptoms" value='yes' type="radio" class="custom-control-input" checked="" required="">
+            <input id="date_oui" name="date_symptoms" value='yes' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="date_oui">Yes</label>
           </div>
           <div class="custom-control custom-radio">
@@ -146,7 +146,7 @@
             </label>
           </div>
           <div class="custom-control custom-radio" onclick=disableAdditionnalQuestion()>
-            <input id="pr4" name="work_env" value='no_contact' type="radio" class="custom-control-input" checked="" required="">
+            <input id="pr4" name="work_env" value='no_contact' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr4">None of the above
             </label>
           </div>
