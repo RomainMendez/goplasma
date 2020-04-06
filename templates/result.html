@@ -39,41 +39,41 @@
     <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='logo.png')}}" alt="" width="144" height="72">
     <h2>Your result !</h2>
     {% if score <= 3 %}
-    <p class="lead">Thank you for your participation. Based on your symptoms and exposure to the new corona virus, it is unlikely that you can donate plasma in this context.</p>
+    <p class="lead" style="font-size: 2em;" >Thank you for your participation. Based on your symptoms and exposure to the new corona virus, it is unlikely that you can donate plasma in this context.</p>
     <div class="col-md-8 order-md-1">
-      <h4 class="result mb-3" style="font-size: 5em;">Your suitability score is : {{score}}!</h4>
+      <h4 class="result mb-3" style="font-size: 3em;">Your suitability score is : {{score}}!</h4>
     </div>
-    <p class="lead">If you want to know if you may be eligible, fill out our plasma donation form. You will need to enter the suitability score there.</p>
+    <p class="lead" style="font-size: 1.5em;">If you want to know if you may be eligible, fill out our plasma donation form. You will need to enter the suitability score there.</p>
     
     
     {% endif %}
     {% if score >= 9 %}
-    <p class="lead">Thank you for your participation. Based on your symptoms and exposure to the new corona virus, it is unlikely that you can donate plasma in this context.</p>
+    <p class="lead" style="font-size: 2em;">Thank you for your participation. Based on your symptoms and exposure to the new corona virus, it is unlikely that you can donate plasma in this context.</p>
     <div class="col-md-8 order-md-1">
-      <h4 class="result mb-3" style="font-size: 5em;">Your suitability score is : 1!</h4>
+      <h4 class="result mb-3" style="font-size: 3em;">Your suitability score is : 1!</h4>
     </div>
-    <p class="lead">If you want to know if you may be eligible, fill out our plasma donation form. You will need to enter the suitability score there.</p>
+    <p class="lead" style="font-size: 1.5em;">If you want to know if you may be eligible, fill out our plasma donation form. You will need to enter the suitability score there.</p>
     {% endif %}
     {% if score <= 6 %}
       {% if score >= 4 %}
-      <p class="lead">We might need you! Based on your symptoms and exposure to the new corona virus, we think that there is a chance that you could be a suitable donor in this context.</p>
+      <p class="lead" style="font-size: 2em;">We might need you! Based on your symptoms and exposure to the new corona virus, we think that there is a chance that you could be a suitable donor in this context.</p>
       
       <div class="col-md-8 order-md-1">
-      <h4 class="result mb-3" style="font-size: 5em;">Your suitability score is : {{score}}!</h4>
+      <h4 class="result mb-3" style="font-size: 3em;">Your suitability score is : {{score}}!</h4>
       </div>
-      <p class="lead">We encourage you to fill out our plasma donation form to check if are eligible. You will need to enter the suitability score there.
+      <p class="lead"style="font-size: 1.5em;" >We encourage you to fill out our plasma donation form to check if are eligible. You will need to enter the suitability score there.
       </p>
     
       {% endif %}
     {% endif %}
     {% if score <= 8 %}
       {% if score >= 7 %}
-      <p class="lead">WE NEED YOU! Based on your exposure and symptoms, we believe that you may be a good candidate for a plasma donation in the context of COVID-19.</p>
+      <p class="lead" style="font-size: 2em;">WE NEED YOU! Based on your exposure and symptoms, we believe that you may be a good candidate for a plasma donation in the context of COVID-19.</p>
       
       <div class="col-md-8 order-md-1">
-        <h4 class="result mb-3" style="font-size: 5em;">Your suitability score is : {{score}}!</h4>
+        <h4 class="result mb-3" style="font-size: 3em;">Your suitability score is : {{score}}!</h4>
         </div>
-        <p class="lead">We strongly encourage you to fill out our plasma donation form to check if are eligible. You will need to enter the suitability score there.
+        <p class="lead" style="font-size: 1.5em;">We strongly encourage you to fill out our plasma donation form to check if are eligible. You will need to enter the suitability score there.
         </p>
       {% endif %}
     {% endif %}
