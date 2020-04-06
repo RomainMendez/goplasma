@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-
+from score_model import scorer
 
 app = Flask(__name__)
 
@@ -16,7 +16,9 @@ def default():
 #Showing the result page
 @app.route('/result')
 def result():
+    score = scorer(request.args)
     print(request.args)
+    print(score)
     return render_template("result.html")
 
 app.run()

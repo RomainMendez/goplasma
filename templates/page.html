@@ -46,29 +46,35 @@
     <div class="col-md-8 order-md-1">
       <form action="/result" class="needs-validation" novalidate>
         <h4 class="mb-3">Avez vous ressenti une faiblesse, ou un sentiment général de mal-être?</h4>
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="faiblesse1oui" name="faiblesse" value='yes' type="radio" class="custom-control-input" required="">
+        <div class="d-block my-3" >
+          <div class="custom-control custom-radio" onclick=enableSliderQuestion()>
+            <input id="faiblesse1oui" name="generally_ill" value='yes' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="faiblesse1oui">Oui</label>
           </div>
-          <div class="custom-control custom-radio">
-            <input id="faiblesse1non" name="faiblesse" value='no' type="radio" class="custom-control-input" checked="" required="">
+          <div class="custom-control custom-radio" onclick=disableSliderQuestion()>
+            <input id="faiblesse1non" name="generally_ill" value='no' type="radio" class="custom-control-input" checked="" required="">
             <label class="custom-control-label" for="faiblesse1non">Non</label>
+          </div>
+        </div>
+        <div id="additionalSlider" class="my-3" style="display:none">
+          <h5 class="mb-3">How bad did you feel at the worst moment of your illness? </h4>
+          <div class="slidecontainer">
+            Top fit <input type="range" min="0" max="4" value="0" class="slider" id="myRange" name="illness_level"> Very ill
           </div>
         </div>
 
         <h4 class="mb-3">Avez-vous eu des symptômes respiratoires?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
-            <input id="s1oui" name="symptoms" value='cough' type="checkbox" class="custom-control-input">
+            <input id="s1oui" name="resp_cough" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s1oui">Toux</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="s2oui" name="symptoms" value='sore throat' type="checkbox" class="custom-control-input">
+            <input id="s2oui" name="resp_throat" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s2oui">Maux de gorge</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="s3oui" name="symptoms" value='difficulty breathing' type="checkbox" class="custom-control-input">
+            <input id="s3oui" name="resp_breath" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s3oui">Souffle court</label>
           </div>
         </div>
@@ -76,11 +82,11 @@
         <h4 class="mb-3">Avez-vous subitement perdu l’odorat ou le goût sans avoir le nez bouché ?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="sudden1" name="sudden" value='yes' type="radio" class="custom-control-input" required="">
+            <input id="sudden1" name="taste_loss" value='yes' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="sudden1">Oui</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="sudden2" name="sudden" value='no' type="radio" class="custom-control-input" checked="" required="">
+            <input id="sudden2" name="taste_loss" value='no' type="radio" class="custom-control-input" checked="" required="">
             <label class="custom-control-label" for="sudden2">Non</label>
           </div>
         </div>
@@ -88,19 +94,19 @@
         <h4 class="mb-3"> Avez-vous développé un ou plusieurs des symptômes suivants?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
-            <input id="s11oui" name="symptoms2" value='cough' type="checkbox" class="custom-control-input">
+            <input id="s11oui" name="sympt_fever" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s11oui">Fièvre</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="s21oui" name="symptoms2" value='sore throat' type="checkbox" class="custom-control-input">
+            <input id="s21oui" name="sympt_sens_fev" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s21oui">Sensation de fièvre</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="s31oui" name="symptoms2" value='difficulty breathing' type="checkbox" class="custom-control-input">
+            <input id="s31oui" name="sympt_musc" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s31oui">Douleurs musculaires</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="s41oui" name="symptoms2" value='difficulty breathing' type="checkbox" class="custom-control-input">
+            <input id="s41oui" name="sympt_head" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="s41oui">Maux de tête</label>
           </div>
         </div>
@@ -108,33 +114,37 @@
         <h4 class="mb-3">Avez vous développé ce(s) symptôme(s) après le 8 mars ?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="date_oui" name="date" value='yes' type="radio" class="custom-control-input" required="">
+            <input id="date_oui" name="date_symptoms" value='yes' type="radio" class="custom-control-input" checked="" required="">
             <label class="custom-control-label" for="date_oui">Oui</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="date_non" name="date" value='no' type="radio" class="custom-control-input"  checked="" required="">
+            <input id="date_non" name="date_symptoms" value='no' type="radio" class="custom-control-input"   required="">
             <label class="custom-control-label" for="date_non">Non</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="date_unknown" name="date_symptoms" value='unknown' type="radio" class="custom-control-input"  required="">
+            <label class="custom-control-label" for="date_unknown">Je ne me souviens plus</label>
           </div>
         </div>
 
         <h4 class="mb-3">Êtes-vous un.e professionnel.le en contact rapproché avec :</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
-            <input id="pr1" name="healthpro" value='yes' type="radio" class="custom-control-input" required="">
+            <input id="pr1" name="work_env" value='healthcare' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr1">Des patients de structures de soins (policlinique, hôpitaux, cabinets)</label>
           </div>
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
-            <input id="pr2" name="healthpro" value='no' type="radio" class="custom-control-input" required="">
+            <input id="pr2" name="work_env" value='close_contact' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr2">Des résidents d’EMS ou d’ESE? 
             </label>
           </div>
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
-            <input id="pr3" name="healthpro" value='no' type="radio" class="custom-control-input" required="">
+            <input id="pr3" name="work_env" value='regular_contact' type="radio" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr3">Plus de 10 nouvelles personnes par jour?
             </label>
           </div>
           <div class="custom-control custom-radio" onclick=disableAdditionnalQuestion()>
-            <input id="pr4" name="healthpro" value='no' type="radio" class="custom-control-input" checked="" required="">
+            <input id="pr4" name="work_env" value='no_contact' type="radio" class="custom-control-input" checked="" required="">
             <label class="custom-control-label" for="pr4">Aucun
             </label>
           </div>
@@ -142,11 +152,11 @@
         <div id="additionnal" class="my-3" style="display:none">
           <h5 class="mb-3">Question additionnelle </h4>
           <div class="custom-control custom-checkbox">
-            <input id="pr11" name="add" value='equipmentInContact' type="checkbox" class="custom-control-input" required="">
+            <input id="pr11" name="work_protec" value='yes' type="checkbox" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr11">Avez-vous porté des équipements de protection individuelle pendant vos heures de travail ?</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="pr12" name="add" value='exposedToConfirmed' type="checkbox" class="custom-control-input" required="">
+            <input id="pr12" name="work_exposure" value='yes' type="checkbox" class="custom-control-input" required="">
             <label class="custom-control-label" for="pr12">Savez-vous si vous avez été exposé à un cas confirmé en laboratoire?
             </label>
           </div>
@@ -155,11 +165,11 @@
         <h4 class="mb-3">Y a-t-il dans votre entourage proche* une personne :</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
-            <input id="ent1" name="surroundings" value='FeverOrCough' type="checkbox" class="custom-control-input">
+            <input id="ent1" name="proxim_sympt" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="ent1">Avec de la toux ou de la fièvre ?</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="ent2" name="surroundings" value='CovidConfirmed' type="checkbox" class="custom-control-input">
+            <input id="ent2" name="proxim_case" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="ent2">Covid-19 confirmée en laboratoire</label>
           </div>
 
@@ -169,11 +179,11 @@
         <h4 class="mb-3">Y a-t-il dans votre entourage proche* une personne :</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
-            <input id="ent11" name="surroundings2" value='FeverOrCough' type="checkbox" class="custom-control-input">
+            <input id="ent11" name="contact_sympt" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="ent11">Avec de la toux ou de la fièvre ?</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input id="ent12" name="surroundings2" value='CovidConfirmed' type="checkbox" class="custom-control-input">
+            <input id="ent12" name="contact_case" value='yes' type="checkbox" class="custom-control-input">
             <label class="custom-control-label" for="ent12">Covid-19 confirmée en laboratoire</label>
           </div>
 
@@ -207,6 +217,12 @@
         }
         function disableAdditionnalQuestion(){
           document.getElementById("additionnal").style.display = "none";
+        }
+        function enableSliderQuestion(){
+          document.getElementById("additionalSlider").style.display = "block";
+        }
+        function disableSliderQuestion(){
+          document.getElementById("additionalSlider").style.display = "none";
         }
 
       </script>
