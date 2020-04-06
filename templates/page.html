@@ -40,8 +40,10 @@
     <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='logo.png')}}" alt="" width="144" height="72">
 	
     <h2>Take the test !</h2>
-    <p class="lead">How likely was it that you ever got COVID-19? Fill in the form To find out!</p>
+    <p class="lead">How likely was it that you ever got COVID-19? Fill in the form t o find out!</p>
   </div>
+  
+  <hr class="mb-4">
 
   <div class="row">
 
@@ -65,7 +67,7 @@
           </div>
         </div>
 
-        <h4 class="mb-3">Have you had respiratory symptoms?</h4>
+        <h4 class="mb-3">Did you have respiratory symptoms?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
             <input id="s1oui" name="resp_cough" value='yes' type="checkbox" class="custom-control-input">
@@ -172,7 +174,7 @@
           </div>
           <div class="custom-control custom-checkbox">
             <input id="ent2" name="proxim_case" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="ent2">CA confirmed case</label>
+            <label class="custom-control-label" for="ent2">A confirmed case</label>
           </div>
 		  
 <!-- 
@@ -194,19 +196,21 @@
           <p>*Personnes vivant sous le même toit, relations intimes</p>
         </div>
 --> 		
-         <hr class="mb-4">
+		 <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Finish !</button>
       </form>
     </div>
   </div>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017-2019 Company Name</p>
+    <p class="mb-1">&copy; 2020 GoPlasma</p>
+	<!--
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
       <li class="list-inline-item"><a href="#">Support</a></li>
     </ul>
+	-->
   </footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
