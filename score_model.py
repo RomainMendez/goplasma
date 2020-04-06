@@ -136,7 +136,7 @@ def scorer(args):
         
     print('LEAVING SCORER')
     print('Predicted score: %d' %score)
-    return int(score)
+    return int(score/10)
 
 
 
