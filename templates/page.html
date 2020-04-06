@@ -32,11 +32,13 @@
       }
     </style>
     <!-- Custom styles for this template -->
-  </head>
+  </head> 
+  <!--
   <body class="bg-light">
     <div class="container">
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+	-->
     <h2>Take the test !</h2>
     <p class="lead">How likely was it that you ever got COVID-19? Fill in the form To find out!</p>
   </div>
@@ -45,21 +47,21 @@
 
     <div class="col-md-8 order-md-1">
       <form action="/result" class="needs-validation" novalidate>
-        <h4 class="mb-3">Did you feel weak, or generally feel unwell?</h4>
+        <h4 class="mb-3">Did you experience a general feeling of illness/weakness?</h4>
         <div class="d-block my-3" >
           <div class="custom-control custom-radio" onclick=enableSliderQuestion()>
             <input id="faiblesse1oui" name="generally_ill" value='yes' type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="faiblesse1oui">Oui</label>
+            <label class="custom-control-label" for="faiblesse1oui">Yes</label>
           </div>
           <div class="custom-control custom-radio" onclick=disableSliderQuestion()>
             <input id="faiblesse1non" name="generally_ill" value='no' type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="faiblesse1non">Non</label>
+            <label class="custom-control-label" for="faiblesse1non">No</label>
           </div>
         </div>
         <div id="additionalSlider" class="my-3" style="display:none">
           <h5 class="mb-3">How bad did you feel at the worst moment of your illness? </h4>
           <div class="slidecontainer">
-            Top fit <input type="range" min="0" max="4" value="0" class="slider" id="myRange" name="illness_level"> Very ill
+            Great <input type="range" min="0" max="4" value="0" class="slider" id="myRange" name="illness_level"> Very ill
           </div>
         </div>
 
@@ -67,85 +69,85 @@
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
             <input id="s1oui" name="resp_cough" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s1oui">Toux</label>
+            <label class="custom-control-label" for="s1oui">Cough</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="s2oui" name="resp_throat" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s2oui">Maux de gorge</label>
+            <label class="custom-control-label" for="s2oui">Soar Throat</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="s3oui" name="resp_breath" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s3oui">Souffle court</label>
+            <label class="custom-control-label" for="s3oui">Difficulty breathing</label>
           </div>
         </div>
 
-        <h4 class="mb-3">Have you suddenly lost your smell or taste without having a stuffy nose?</h4>
+        <h4 class="mb-3">Have you suddenly lost your smell or taste without having a stuffy/blocked nose?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
             <input id="sudden1" name="taste_loss" value='yes' type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="sudden1">Oui</label>
+            <label class="custom-control-label" for="sudden1">Yes</label>
           </div>
           <div class="custom-control custom-radio">
             <input id="sudden2" name="taste_loss" value='no' type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="sudden2">Non</label>
+            <label class="custom-control-label" for="sudden2">No</label>
           </div>
         </div>
 
-        <h4 class="mb-3"> Have you developped one or more of the following symptoms?</h4>
+        <h4 class="mb-3"> Have you shown one or more of the following symptoms?</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
             <input id="s11oui" name="sympt_fever" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s11oui">Fièvre</label>
+            <label class="custom-control-label" for="s11oui">Fever</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="s21oui" name="sympt_sens_fev" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s21oui">Sensation de fièvre</label>
+            <label class="custom-control-label" for="s21oui">Sensation of fever</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="s31oui" name="sympt_musc" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s31oui">Douleurs musculaires</label>
+            <label class="custom-control-label" for="s31oui">Muscle pain</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="s41oui" name="sympt_head" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="s41oui">Maux de tête</label>
+            <label class="custom-control-label" for="s41oui">Headache</label>
           </div>
         </div>
 
-        <h4 class="mb-3">Have you developed this(these) symptom(s) after the 8th of March?</h4>
+        <h4 class="mb-3">Have you developed the symptom(s) after the 8th of March</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
             <input id="date_oui" name="date_symptoms" value='yes' type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="date_oui">Oui</label>
+            <label class="custom-control-label" for="date_oui">Yes</label>
           </div>
           <div class="custom-control custom-radio">
             <input id="date_non" name="date_symptoms" value='no' type="radio" class="custom-control-input"   required="">
-            <label class="custom-control-label" for="date_non">Non</label>
+            <label class="custom-control-label" for="date_non">No</label>
           </div>
           <div class="custom-control custom-radio">
             <input id="date_unknown" name="date_symptoms" value='unknown' type="radio" class="custom-control-input"  required="">
-            <label class="custom-control-label" for="date_unknown">Je ne me souviens plus</label>
+            <label class="custom-control-label" for="date_unknown">I don't remember</label>
           </div>
         </div>
 
-        <h4 class="mb-3">Êtes-vous un.e professionnel.le en contact rapproché avec :</h4>
+        <h4 class="mb-3">Are you a professional in close contact with:</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
             <input id="pr1" name="work_env" value='healthcare' type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="pr1">Des patients de structures de soins (policlinique, hôpitaux, cabinets)</label>
+            <label class="custom-control-label" for="pr1">Patients from care facilities </label>
           </div>
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
             <input id="pr2" name="work_env" value='close_contact' type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="pr2">Des résidents d’EMS ou d’ESE? 
+            <label class="custom-control-label" for="pr2">Residents in senior residences or social facilities
             </label>
           </div>
           <div class="custom-control custom-radio" onclick=enableAdditionnalQuestion()>
             <input id="pr3" name="work_env" value='regular_contact' type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="pr3">Plus de 10 nouvelles personnes par jour?
+            <label class="custom-control-label" for="pr3">More than 10 new people a day
             </label>
           </div>
           <div class="custom-control custom-radio" onclick=disableAdditionnalQuestion()>
             <input id="pr4" name="work_env" value='no_contact' type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="pr4">Aucun
+            <label class="custom-control-label" for="pr4">None of the above
             </label>
           </div>
         </div>
@@ -153,44 +155,46 @@
           <h5 class="mb-3">Question additionnelle </h4>
           <div class="custom-control custom-checkbox">
             <input id="pr11" name="work_protec" value='yes' type="checkbox" class="custom-control-input" required="">
-            <label class="custom-control-label" for="pr11">Avez-vous porté des équipements de protection individuelle pendant vos heures de travail ?</label>
+            <label class="custom-control-label" for="pr11">Did you wear personal protective equipment during your work time ?</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="pr12" name="work_exposure" value='yes' type="checkbox" class="custom-control-input" required="">
-            <label class="custom-control-label" for="pr12">Savez-vous si vous avez été exposé à un cas confirmé en laboratoire?
+            <label class="custom-control-label" for="pr12">Do you know of having been exposed to a laboratory confirmed case ?
             </label>
           </div>
         </div>
 
-        <h4 class="mb-3">Y a-t-il dans votre entourage proche* une personne :</h4>
+        <h4 class="mb-3">Is there anyone in your close proximity (everyday interactions) with:</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
             <input id="ent1" name="proxim_sympt" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="ent1">Avec de la toux ou de la fièvre ?</label>
+            <label class="custom-control-label" for="ent1">A person with fever or cough</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="ent2" name="proxim_case" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="ent2">Covid-19 confirmée en laboratoire</label>
+            <label class="custom-control-label" for="ent2">CA confirmed case</label>
           </div>
-
+		  
+<!-- 
           <p>*Personnes avec qui vous avez des contacts quotidiens, ex. collègue de travail</p>
         </div>
-
-        <h4 class="mb-3">Y a-t-il dans votre entourage proche* une personne :</h4>
+-->
+		  
+        <h4 class="mb-3">Have you had close contact (same household, intimate relationships) with:</h4>
         <div class="d-block my-3">
           <div class="custom-control custom-checkbox">
             <input id="ent11" name="contact_sympt" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="ent11">Avec de la toux ou de la fièvre ?</label>
+            <label class="custom-control-label" for="ent11">A person with fever or cough</label>
           </div>
           <div class="custom-control custom-checkbox">
             <input id="ent12" name="contact_case" value='yes' type="checkbox" class="custom-control-input">
-            <label class="custom-control-label" for="ent12">Covid-19 confirmée en laboratoire</label>
+            <label class="custom-control-label" for="ent12">A confirmed case</label>
           </div>
-
+<!-- 
           <p>*Personnes vivant sous le même toit, relations intimes</p>
         </div>
-
-        <hr class="mb-4">
+--> 		
+         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Finish !</button>
       </form>
     </div>
