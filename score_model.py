@@ -125,7 +125,7 @@ def scorer(args):
     
     if (results[worst_case.index] == worst_case).all(): # hard-code the absolute worst case
         print('Detected no symptoms; returning')
-        return SCORE_WORST_CASE / 10
+        return int(SCORE_WORST_CASE / 10)
     
     prediction, probabilities = predict(results)
     score   = score_to_percentage(prediction, probabilities)
