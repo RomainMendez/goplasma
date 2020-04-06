@@ -1,3 +1,17 @@
+.result{
+  font-size: 5em;
+}
+
+#result{
+  font-size: 5em;
+}
+
+
+
+
+
+
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -1163,7 +1177,6 @@ pre code {
   .col-md-8 {
     -ms-flex: 0 0 66.666667%;
     flex: 0 0 66.666667%;
-    max-width: 66.666667%;
   }
   .col-md-9 {
     -ms-flex: 0 0 75%;
